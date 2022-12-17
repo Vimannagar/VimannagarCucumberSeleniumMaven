@@ -10,7 +10,8 @@ public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 
 public WebDriver driver;
 	
-	
+//	method returns the object of webdriver type as well as open the browser
+
 	public WebDriver initBrowser(String browser)
 	{
 		if(browser.equals("Chrome"))
@@ -33,6 +34,8 @@ public WebDriver driver;
 		
 	}
 	
+	
+//	this method will just return the object of webdriver type
 	
 	public static synchronized WebDriver getDriver()
 	{
