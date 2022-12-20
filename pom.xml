@@ -76,17 +76,8 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>${maven.surefire.version}</version>
-          <configuration>
-          <parallel>methods</parallel>
-          <useUnlimitedThreads>true</useUnlimitedThreads>
-          
-          </configuration>
-          
-        </plugin>
-        
-        
-        
-      </plugins>
+          <version>2.22.0</version>
+          </plugin>
+         </plugins>
   </build>
 </project>

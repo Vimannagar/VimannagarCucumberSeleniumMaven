@@ -13,4 +13,3 @@ Given user is at the landing page
 When user enters the username as "8176867662"
 And user enters the password as "123456"
 And user confirm the signin
-Then user should get logged in

@@ -43,27 +43,27 @@ public class LoginSteps {
 	@Then("cart icon should get display")
 	public void cart_icon_should_get_display() {
 	   
+		boolean isdisplay = loginpage.isCartIconDisplayed();
+		
+		Assert.assertTrue(isdisplay);
 	}
 
 	@When("user enters the username as {string}")
-	public void user_enters_the_username_as(String string) {
-	    
+	public void user_enters_the_username_as(String un) {
+	    loginpage.enterUsername(un);
 	}
 
 	@When("user enters the password as {string}")
-	public void user_enters_the_password_as(String string) {
-	   
+	public void user_enters_the_password_as(String pwd) {
+		loginpage.enterPassword(pwd);
 	}
 
 	@When("user confirm the signin")
 	public void user_confirm_the_signin() {
-	   
+		loginpage.clickLogin();
 	}
 
-	@Then("user should get logged in")
-	public void user_should_get_logged_in() {
-	    
-	}
+
 
 	
 	

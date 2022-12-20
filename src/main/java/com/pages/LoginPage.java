@@ -38,7 +38,7 @@ public class LoginPage {
 	}
 	
 	
-	public void enterUsername()
+	public void enterUsername(String un)
 	{
 		Actions act = new Actions(driver);
 		
@@ -46,17 +46,23 @@ public class LoginPage {
 		
 		driver.findElement(hoversigninbutton).click();
 		
-		driver.findElement(emailaddress).sendKeys("7878787887");
+		driver.findElement(emailaddress).sendKeys(un);
 		
 		driver.findElement(continueforemail).click();
 		
 	}
 	
-	public void enterPassword()
+	public void enterPassword(String pwd)
 	{
-		driver.findElement(passwordfield).sendKeys("");
-		driver.findElement(signinsubmit).click();
+		driver.findElement(passwordfield).sendKeys(pwd);
 		
+		
+	}
+	
+	
+	public void clickLogin()
+	{
+		driver.findElement(signinsubmit).click();
 	}
 	
 	public boolean isCartIconDisplayed()
@@ -64,6 +70,30 @@ public class LoginPage {
 		boolean isdisplayingoverpage = driver.findElement(carticon).isDisplayed();
 		
 		return isdisplayingoverpage;
+	}
+	
+	
+	public SearchProduct doLogin(String un , String pwd)
+	{
+//		enter username 
+		Actions act = new Actions(driver);
+		
+		act.moveToElement(driver.findElement(hoverelement)).perform();
+		
+		driver.findElement(hoversigninbutton).click();
+		
+		driver.findElement(emailaddress).sendKeys(un);
+		
+		driver.findElement(continueforemail).click();
+		
+//		enter password
+		driver.findElement(passwordfield).sendKeys(pwd);
+		
+//		click on login
+		
+		driver.findElement(signinsubmit).click();
+		
+		return new SearchProduct(driver);
 	}
 	
 	
